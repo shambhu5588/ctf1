@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PURPLE CTF</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Courier New", Courier, monospace;
+            background-color: #000;
+            color: #00FF00;
+            overflow: hidden;
+        }
+
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #000;
+            z-index: 1000;
+        }
+
+        .terminal {
+            width: 80%;
+            max-width: 800px;
+            padding: 20px;
+            border: 1px solid #00FF00;
+            box-shadow: 0px 0px 10px #00FF00;
+            background-color: #000;
+        }
+
+        .line {
+            opacity: 0;
+            white-space: pre-wrap;
+        }
+
+        @keyframes showLine {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* First two lines - slightly slower */
+        .line:nth-child(1) {
+            animation: showLine 0.5s forwards 0.5s;
+        }
+
+        .line:nth-child(2) {
+            animation: showLine 0.5s forwards 1s;
+        }
+
+        /* Remaining lines - faster */
+        .line:nth-child(3) {
+            animation: showLine 0.3s forwards 1.5s;
+        }
+
+        .line:nth-child(4) {
+            animation: showLine 0.3s forwards 1.8s;
+        }
+
+        .line:nth-child(5) {
+            animation: showLine 0.2s forwards 2.1s;
+        }
+
+        .line:nth-child(6) {
+            animation: showLine 0.2s forwards 2.3s;
+        }
+
+        .line:nth-child(7) {
+            animation: showLine 0.2s forwards 2.5s;
+        }
+
+        .line:nth-child(8) {
+            animation: showLine 0.2s forwards 2.7s;
+        }
+
+        .line:nth-child(9) {
+            animation: showLine 0.2s forwards 2.9s;
+        }
+
+        .line:nth-child(10) {
+            animation: showLine 0.2s forwards 3.1s;
+        }
+
+        .line:nth-child(11) {
+            animation: showLine 0.2s forwards 3.3s;
+        }
+
+        .line:nth-child(12) {
+            animation: showLine 0.2s forwards 3.5s;
+        }
+
+        .line:nth-child(13) {
+            animation: showLine 0.2s forwards 3.7s;
+        }
+
+        .line:nth-child(14) {
+            animation: showLine 0.2s forwards 3.9s;
+        }
+
+        .line:nth-child(15) {
+            animation: showLine 0.2s forwards 4.1s;
+        }
+
+        .line:nth-child(16) {
+            animation: showLine 0.2s forwards 4.3s;
+        }
+
+        #main {
+            display: none;
+            background-color: #111;
+            color: white;
+            padding: 20px;
+            height: 100vh;
+            overflow: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="terminal">
+            <div class="line">Initializing request</div>
+            <div class="line">Resolving internet address 127.0.0.1</div>
+            <div class="line">Requesting access to server</div>
+            <div class="line">Entering credentials</div>
+            <div class="line">Login denied</div>
+            <div class="line">Re-entering credentials</div>
+            <div class="line">Access granted</div>
+            <div class="line">Finding CTF backend services</div>
+            <div class="line">Services found on port 80</div>
+            <div class="line">Fetching resources</div>
+            <div class="line">Processing DOM</div>
+            <div class="line">Loading images</div>
+            <div class="line">Loading content</div>
+            <div class="line">Page rendered</div>
+            <div class="line">Starting display manager</div>
+            <div class="line">WELCOME TO PURPLE CTF 2.0</div>
+            <div class="line">Initializing...</div>
+        </div>
+    </div>
+
+    <!-- Main content -->
+    <div id="main">
+        <!-- Your website content goes here -->
+        <h1>Welcome to PURPLE CTF!</h1>
+            </div>
+
+    <script>
+        // Hide the preloader and show the main content after the animation ends
+        window.addEventListener('load', function() {
+            const preloader = document.getElementById('preloader');
+            const mainContent = document.getElementById('main');
+
+            setTimeout(function() {
+                preloader.style.display = 'none';
+                mainContent.style.display = 'block';
+
+                // Redirect to a new page after displaying the main content
+                window.location.href = 'home.html'; // Replace with your desired URL
+            }, 4500); // Adjust this delay to match the total duration of your preloader animation
+        });
+    </script>
+</body>
+
+</html>
